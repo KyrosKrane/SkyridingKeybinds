@@ -33,6 +33,7 @@ local function SetBinding()
 	DebugPrint("In SetBinding()")
 	if BindingSet then return end
 	SetOverrideBinding(DRBFFrame, false, "BUTTON5", "SPELL Surge Forward")
+	SetOverrideBinding(DRBFFrame, false, "BUTTON4", "SPELL Skyward Ascent")
 	SetOverrideBinding(DRBFFrame, false, "BUTTON3", "SPELL Whirling Surge")
     BindingSet = true
 	DebugPrint("Binding set")
