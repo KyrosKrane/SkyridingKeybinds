@@ -1,7 +1,7 @@
-## Interface: 100105
+## Interface: 100107
 ## Title: DragonRiding Button Fixer
 ## Author: KyrosKrane Sylvanblade
-## Notes: Removes multiple annoying confirmation popups throughout the game. Configurable through the standard settings dialog.
+## Notes: Enables use of mouse buttons for dragonriding abilities
 ## IconTexture: Interface\Icons\Ability_dragonriding_upwardflap01
 
 DRButtonFixer.lua
