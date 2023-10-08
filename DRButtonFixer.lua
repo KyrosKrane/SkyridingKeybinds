@@ -63,13 +63,13 @@ local function SetBinding()
 
 	-- Set the right bindings
 	if DracthyrGliding then
-		SetOverrideBinding(DRBFFrame, false, "BUTTON5", "SPELL Surge Forward(Racial)")
-		SetOverrideBinding(DRBFFrame, false, "BUTTON4", "SPELL Skyward Ascent(Racial)")
+		SetOverrideBinding(DRBFFrame, false, "BUTTON5", "SPELL Surge Forward(Racial)") -- 376743-- Wowhead says "triggered by" 386449 ??
+		SetOverrideBinding(DRBFFrame, false, "BUTTON4", "SPELL Skyward Ascent(Racial)") -- 376744 -- Wowhead says "triggered by" 386451 ??
 		BindingSet = "dracthyr"
 		DebugPrint("Dracthyr Binding set")
     else
-	SetOverrideBinding(DRBFFrame, false, "BUTTON5", "SPELL Surge Forward")
-	SetOverrideBinding(DRBFFrame, false, "BUTTON4", "SPELL Skyward Ascent")
+		SetOverrideBinding(DRBFFrame, false, "BUTTON5", "SPELL Surge Forward(Dragonriding)") -- 372608
+		SetOverrideBinding(DRBFFrame, false, "BUTTON4", "SPELL Skyward Ascent(Dragonriding)") -- 372610
 	SetOverrideBinding(DRBFFrame, false, "BUTTON3", "SPELL Whirling Surge")
 		BindingSet = "dragonriding"
 		DebugPrint("Dragonriding Binding set")
