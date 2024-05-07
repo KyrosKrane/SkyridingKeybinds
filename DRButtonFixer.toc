@@ -1,4 +1,4 @@
-## Interface: 100205
+## Interface: 100207
 ## Title: DragonRiding Button Fixer
 ## Author: KyrosKrane Sylvanblade
 ## Notes: Enables use of mouse buttons for dragonriding abilities
