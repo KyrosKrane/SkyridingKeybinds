@@ -1,4 +1,4 @@
--- Dragonriding Button Fixer
+-- Skyriding Keybinds
 -- Written by KyrosKrane Sylvanblade (kyros@kyros.info)
 -- Copyright (c) 2023-2025 KyrosKrane Sylvanblade
 -- Licensed under the MIT License, as per the included file.
@@ -9,19 +9,19 @@
 
 
 -- Grab the WoW-defined addon folder name and storage table for our addon
-local addonName, DRBF = ...
+local addonName, SRKB = ...
 
 
 -- Settings to enable debug output
-local DRBFDebugMode = false
+local SRKBDebugMode = false
 
 local function DebugPrint(...)
-	if DRBFDebugMode then print("DRBF: ", ...) end
+	if SRKBDebugMode then print("SRKB: ", ...) end
 end
 
 
 -- Initialize at load time
-DebugPrint("DRBF loading")
+DebugPrint("loading")
 
 
 -- These are the keybinds and spell IDs they should cast.
@@ -57,5 +57,5 @@ for _, ability in next, ABILITIES do
 end
 
 
-DebugPrint("DRBF button keybinding complete")
+DebugPrint("Button keybinding complete")
 

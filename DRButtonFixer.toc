@@ -1,8 +1,12 @@
-## Interface: 110100
-## Title: DragonRiding Button Fixer
+## Interface: 110105
+## Title: Skyriding Keybinds
 ## Author: KyrosKrane Sylvanblade
-## Notes: Enables use of mouse buttons for dragonriding abilities
+## Notes: Enables use of mouse buttons for skyriding abilities
 ## IconTexture: Interface\Icons\Ability_dragonriding_upwardflap01
+
+## X-Curse-Project-ID: 1287707
+# X-WoWI-ID: TBD
+## X-Wago-ID: BKpqnBGE
 
 ## Category: User Interface
 ## Category-enUS: User Interface
