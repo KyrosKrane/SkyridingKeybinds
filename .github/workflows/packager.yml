@@ -21,6 +21,9 @@ jobs:
     # we can run our steps on pretty much anything, but the "ubuntu-latest" image is a safe bet
     runs-on: ubuntu-latest
 
+    # Import the secrets from the Github environment settings
+    environment: WoW Packager
+
     # specify the environment variables used by the packager, matching the secrets from the project on GitHub
     env:
       CF_API_KEY: ${{ secrets.CF_API_KEY }}
