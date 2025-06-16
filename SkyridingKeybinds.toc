@@ -1,6 +1,7 @@
-## Interface: 110105
+## Interface: @toc-version-retail@
 ## Title: Skyriding Keybinds
 ## Author: KyrosKrane Sylvanblade
+## Version: @project-version@
 ## Notes: Enables use of mouse buttons for skyriding abilities
 ## IconTexture: Interface\Icons\Ability_dragonriding_upwardflap01
 
