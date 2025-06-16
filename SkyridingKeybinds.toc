@@ -21,4 +21,4 @@
 ## Category-zhCN: 用户界面
 ## Category-zhTW: 使用者介面
 
-DRButtonFixer.lua
+SkyridingKeybinds.lua
