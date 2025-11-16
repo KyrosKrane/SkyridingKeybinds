@@ -13,7 +13,7 @@ local addonName, SRKB = ...
 
 
 -- Settings to enable debug output
-local SRKBDebugMode = false
+local SRKBDebugMode = true
 
 local function DebugPrint(...)
 	if SRKBDebugMode then print("SRKB: ", ...) end
@@ -31,6 +31,8 @@ local ABILITIES = {
 	{key = 'BUTTON3', spellID = 361584}, -- Whirling Surge
 	-- {key = 'E', spellID = 425782}, -- Second Wind
 	-- {key = 'T', spellID = 403092}, -- Aerial Halt
+	-- takeoff spell ID seems to be 1239847 ??
+
 }
 -- Note that the game intelligently handles Dracthyr Soar abilities, as well as the choice node between Whirling Surge and Lightning Rush. Essentially, it's all mapped automatically by the game. The spell IDs above are sufficient.
 
@@ -39,8 +41,10 @@ local ABILITIES = {
 local STATE_HANDLER = [[
 	if newstate == 'mounted' then
 		self:SetBindingClick(true, self:GetAttribute('key'), self)
+		print("mounted " .. self:GetAttribute('key'))
 	elseif newstate == 'reset' then
 		self:ClearBindings()
+		print("reset " .. self:GetAttribute('key'))
 	end
 ]]
 
@@ -53,6 +57,9 @@ for _, ability in next, ABILITIES do
 	button:SetAttribute('spell', ability.spellID)
 	button:SetAttribute('key', ability.key)
 	button:SetAttribute('_onstate-skyriding', STATE_HANDLER)
+	button:SetScript("OnClick", function (self, whichbutton, down)
+		DebugPrint("button for spellID " .. ability.spellID .. " clicked with " .. whichbutton)
+	end)
 	RegisterAttributeDriver(button, 'state-skyriding', '[bonusbar:5,flying] mounted; reset')
 end
 
