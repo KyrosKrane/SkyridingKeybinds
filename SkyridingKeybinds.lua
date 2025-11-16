@@ -36,7 +36,6 @@ local ABILITIES = {
 	-- {key = 'E', spellID = 425782}, -- Second Wind
 	-- {key = 'T', spellID = 403092}, -- Aerial Halt
 	-- takeoff spell ID seems to be 1239847 ??
-
 }
 -- Note that the game intelligently handles Dracthyr Soar abilities, as well as the choice node between Whirling Surge and Lightning Rush. Essentially, it's all mapped automatically by the game. The spell IDs above are sufficient.
 
@@ -57,17 +56,17 @@ local STATE_HANDLER = [[
 for _, ability in next, ABILITIES do
 	DebugPrint("Creating button for spellID " .. ability.spellID .. " bound to " .. ability.key)
 	local button = CreateFrame('Button', addonName .. 'MountAbilityButton' .. ability.key, nil, 'SecureActionButtonTemplate, SecureHandlerStateTemplate')
+	button:RegisterForClicks("AnyUp", "AnyDown")
 	button:SetAttribute('type', 'spell')
 	button:SetAttribute('spell', ability.spellID)
 	button:SetAttribute('key', ability.key)
 	button:SetAttribute('SRKBDebugMode', SRKBDebugMode)
 	button:SetAttribute('_onstate-skyriding', STATE_HANDLER)
-	button:SetScript("OnClick", function (self, whichbutton, down)
-		DebugPrint("button for spellID " .. ability.spellID .. " clicked with " .. whichbutton)
+	button:SetScript("PreClick", function (self, whichbutton, down)
+		DebugPrint((down and "Click" or "Release") .. " button for spellID " .. ability.spellID .. " clicked with " .. whichbutton .. "(probably wrong button reported)") 
+		-- as of this writing, whichbutton always gives LeftButton, regardless of what the actual mouse button is.
 	end)
 	RegisterAttributeDriver(button, 'state-skyriding', '[bonusbar:5,flying] mounted; reset')
 end
 
-
 DebugPrint("Button keybinding complete")
-
