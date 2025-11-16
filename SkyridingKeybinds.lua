@@ -49,6 +49,7 @@ local STATE_HANDLER = [[
 for _, ability in next, ABILITIES do
 	DebugPrint("Creating button for spellID " .. ability.spellID .. " bound to " .. ability.key)
 	local button = CreateFrame('Button', addonName .. 'MountAbilityButton' .. ability.key, nil, 'SecureActionButtonTemplate, SecureHandlerStateTemplate')
+	button:RegisterForClicks("AnyUp", "AnyDown")
 	button:SetAttribute('type', 'spell')
 	button:SetAttribute('spell', ability.spellID)
 	button:SetAttribute('key', ability.key)
