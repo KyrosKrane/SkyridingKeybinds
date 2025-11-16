@@ -45,10 +45,10 @@ local ABILITIES = {
 local STATE_HANDLER = [[
 	if newstate == 'mounted' then
 		self:SetBindingClick(true, self:GetAttribute('key'), self)
-		print("mounted " .. self:GetAttribute('key'))
+		if self:GetAttribute('SRKBDebugMode') then print("mounted " .. self:GetAttribute('key')) end
 	elseif newstate == 'reset' then
 		self:ClearBindings()
-		print("reset " .. self:GetAttribute('key'))
+		if self:GetAttribute('SRKBDebugMode') then print("reset " .. self:GetAttribute('key')) end
 	end
 ]]
 
@@ -60,6 +60,7 @@ for _, ability in next, ABILITIES do
 	button:SetAttribute('type', 'spell')
 	button:SetAttribute('spell', ability.spellID)
 	button:SetAttribute('key', ability.key)
+	button:SetAttribute('SRKBDebugMode', SRKBDebugMode)
 	button:SetAttribute('_onstate-skyriding', STATE_HANDLER)
 	button:SetScript("OnClick", function (self, whichbutton, down)
 		DebugPrint("button for spellID " .. ability.spellID .. " clicked with " .. whichbutton)
