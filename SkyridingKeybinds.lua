@@ -13,7 +13,11 @@ local addonName, SRKB = ...
 
 
 -- Settings to enable debug output
-local SRKBDebugMode = true
+local SRKBDebugMode = false
+	--@alpha@
+	-- Enable debug mode for test only
+	SRKBDebugMode = true
+	--@end-alpha@
 
 local function DebugPrint(...)
 	if SRKBDebugMode then print("SRKB: ", ...) end
