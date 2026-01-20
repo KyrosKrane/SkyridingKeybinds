@@ -1,4 +1,4 @@
-## Interface: @toc-version-retail@, @toc-version-midnight@
+## Interface: @toc-version-retail@
 ## Title: Skyriding Keybinds
 ## Author: KyrosKrane Sylvanblade
 ## Version: @project-version@
